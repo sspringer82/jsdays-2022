@@ -2,6 +2,7 @@
   "name": "fancy-api",
   "version": "0.0.1",
   "description": "A fancy web api",
+  "private": true,
   "main": "index.js",
   "scripts": {
     "start": "node index.js",

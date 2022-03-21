@@ -2,4 +2,7 @@
 
 ## Start the app
 
-```npm start```
+```
+npm install
+npm start
+```
