@@ -4,6 +4,7 @@ function getUsers() {
     return promise;
 }
 
+
 // top level await
 // console.log('1');
 // const users = await getUsers();
@@ -13,10 +14,17 @@ function getUsers() {
 // async/await 
 async function handleUsers() { // gibt immer ein promise objekt mit dem Rückgabewert zurück
     console.log('1');
-    const users = await getUsers();
-    users.forEach(user => console.log(`${user.firstname} ${user.lastname}`));
+    try {
+        const users = await getUsers();
+        users.forEach(user => console.log(`${user.firstname} ${user.lastname}`));
+    } catch (e) {
+        console.error(e);
+    }
     console.log('2');
     return 42;
 }
-const result = await handleUsers();
-console.log(result);
+
+
+console.log('a');
+handleUsers();
+console.log('b');
