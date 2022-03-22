@@ -1,14 +1,22 @@
-const readline = require('readline');
-const { stdin: input, stdout: output } = require('process');
+import * as readline from 'node:readline/promises';
+import { stdin as input, stdout as output } from 'node:process';
 
 const rl = readline.createInterface({ input, output });
 
-rl.question('1 + 1 = ? ', (answer) => {
-    if (answer === '2') {
-        console.log('korrekt');
-    } else {
-        console.log('falsch');
-    }
+let answer = await rl.question('1 + 1 = ? ');
 
-    rl.close();
-});
+if (answer === '2') {
+    console.log('Correct!');
+} else {
+    console.log('Incorrect!');
+}
+
+answer = await rl.question('2 + 2 = ? ');
+
+if (answer === '4') {
+    console.log('Correct!');
+} else {
+    console.log('Incorrect!');
+}
+
+rl.close();

@@ -17,3 +17,10 @@
 4. Auf inspect bei Remote Target klicken
 5. Wenn keine Datei sichtbar ist mit CTRL+P bzw. CMD+P => index.js suchen
 6. Debugger auf der Kommandozeile mit CTRL+C beenden
+
+# Modulsystem
+Um das ECMAScript Modulsystem nutzen zu können müssen wir:
+
+* `"type": "module"` in die package.json
+* Dateiendung .mjs
+* `--input-type=module` beim Aufruf der Applikation
