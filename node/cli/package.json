@@ -4,9 +4,10 @@
   "description": "A tool to train your math skills",
   "main": "index.js",
   "scripts": {
-    "prestart": "echo \"PRE Starting the app\"",
+    "prebuild": "echo \"PRE Starting the app\"",
+    "build": "node index.js",
+    "postbuild": "echo \"POST Starting the app\"",
     "start": "node index.js",
-    "poststart": "echo \"POST Starting the app\"",
     "start:debug": "node --inspect-brk index.js",
     "start:dev": "nodemon server.js"
   },

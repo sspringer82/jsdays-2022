@@ -1,9 +1,14 @@
-const value1 = 1;
-const value2 = 2;
-function add(a, b) {
-    return a + b;
-}
-const result = add(value1, value2);
-console.log(result);
+const readline = require('readline');
+const { stdin: input, stdout: output } = require('process');
 
-console.log('Hallo CLI')
+const rl = readline.createInterface({ input, output });
+
+rl.question('1 + 1 = ? ', (answer) => {
+    if (answer === '2') {
+        console.log('korrekt');
+    } else {
+        console.log('falsch');
+    }
+
+    rl.close();
+});
