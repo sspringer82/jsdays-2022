@@ -4,7 +4,9 @@
   "description": "A tool to train your math skills",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "prestart": "echo \"PRE Starting the app\"",
+    "start": "node index.js",
+    "poststart": "echo \"POST Starting the app\""
   },
   "keywords": [
     "math",
@@ -12,6 +14,6 @@
     "fun",
     "stuff"
   ],
-  "author": "Basti Springer",
+  "author": "Basti Springer<sebastian.springer@maibornwolff.de>",
   "license": "ISC"
 }
