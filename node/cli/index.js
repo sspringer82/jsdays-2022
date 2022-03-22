@@ -2,14 +2,14 @@ import * as readline from 'readline';
 import { stdin as input, stdout as output } from 'process';
 import { question } from './question.js';
 import { getTask } from './get-task.js';
-
-import { program } from 'commander';
+import { parseCli } from './cli-parser.js';
 
 const rl = readline.createInterface({ input, output });
 
+const options = parseCli();
 
-const difficulty = 3;
-const count = 4;
+const difficulty = parseInt(options.difficulty, 10);
+const count = parseInt(options.count, 10);
 const tasks = [];
 for (let i = 0; i < count; i++) {
     tasks.push(getTask(difficulty));
@@ -21,7 +21,7 @@ for (let i = 0; i < count; i++) {
     if (parseInt(answer, 10) === task.result) {
         console.log('Correct!');
     } else {
-        console.log('Incorrect!');
+        console.log('FALSCH!');
     }
 }
 

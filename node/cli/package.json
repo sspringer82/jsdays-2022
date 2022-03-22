@@ -4,6 +4,9 @@
   "description": "A tool to train your math skills",
   "main": "index.js",
   "type": "module",
+  "bin": {
+    "math-trainer": "bin/math-trainer.js"
+  },
   "scripts": {
     "prebuild": "echo \"PRE Starting the app\"",
     "build": "node index.js",

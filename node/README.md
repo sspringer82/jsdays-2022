@@ -25,3 +25,10 @@ Um das ECMAScript Modulsystem nutzen zu können müssen wir:
 * `"type": "module"` in die package.json
 * Dateiendung .mjs
 * `--input-type=module` beim Aufruf der Applikation
+
+# CLI App
+* bin-Verzeichnis + JS-Datei als Einstieg
+* Eintrag `bin` in package.json
+* `npm link` => CLI tool im Entwicklungsmodus => `math-trainer` auf der CLI ausführen
+* `npm install -g .` für tatsächliche Installation
+* Publish: `npm useradd` `npm publish`
