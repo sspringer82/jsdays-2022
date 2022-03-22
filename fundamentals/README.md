@@ -14,6 +14,12 @@
 * https://docs.npmjs.com/cli/v8/using-npm/scripts/
 * https://www.npmjs.com/package/semver
 * https://www.npmtrends.com/
+* https://eslint.org/
+* https://github.com/airbnb/javascript
+* https://google.github.io/styleguide/jsguide.html
+* https://standardjs.com/
+* https://prettier.io/
+* https://github.com/sindresorhus/eslint-plugin-unicorn
 
 ## NPM
 
