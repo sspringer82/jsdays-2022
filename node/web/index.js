@@ -1,7 +1,16 @@
+import { createWriteStream } from 'node:fs';
+import { join } from 'node:path';
 import express from 'express';
 import morgan from 'morgan';
+import { getDirname } from './dirname.js';
+
+const dirname = getDirname(import.meta.url);
 
 const app = express();
+
+var accessLogStream = createWriteStream(join(dirname, 'access.log'), { flags: 'a' })
+app.use(morgan('combined', { stream: accessLogStream }));
+
 // Middleware
 app.use((request, response, next) => {
     console.log('Middleware');
