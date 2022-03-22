@@ -3,6 +3,7 @@ import { join } from 'node:path';
 import express from 'express';
 import morgan from 'morgan';
 import { getDirname } from './dirname.js';
+import { router as userRouter } from './users/index.js';
 
 const dirname = getDirname(import.meta.url);
 
@@ -10,6 +11,8 @@ const app = express();
 
 var accessLogStream = createWriteStream(join(dirname, 'access.log'), { flags: 'a' })
 app.use(morgan('combined', { stream: accessLogStream }));
+
+app.use('/users', userRouter);
 
 // Middleware
 app.use((request, response, next) => {
