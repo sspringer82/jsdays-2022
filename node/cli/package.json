@@ -21,7 +21,7 @@
     "fun",
     "stuff"
   ],
-  "author": "Basti Springer<sebastian.springer@maibornwolff.de>",
+  "author": "Basti Springer <sebastian.springer@maibornwolff.de>",
   "license": "ISC",
   "devDependencies": {
     "nodemon": "^2.0.15"
