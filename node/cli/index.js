@@ -3,6 +3,8 @@ import { stdin as input, stdout as output } from 'process';
 import { question } from './question.js';
 import { getTask } from './get-task.js';
 
+import { program } from 'commander';
+
 const rl = readline.createInterface({ input, output });
 
 

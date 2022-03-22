@@ -8,6 +8,7 @@
 * Package.json fields: https://docs.npmjs.com/cli/v7/configuring-npm/package-json
 * NPM Scripts: https://docs.npmjs.com/cli/v8/using-npm/scripts/
 * Nodemon: https://nodemon.io/
+* npmtrends: https://www.npmtrends.com/
 
 ## Debugger
 
