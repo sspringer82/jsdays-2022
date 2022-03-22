@@ -6,7 +6,9 @@
   "scripts": {
     "prestart": "echo \"PRE Starting the app\"",
     "start": "node index.js",
-    "poststart": "echo \"POST Starting the app\""
+    "poststart": "echo \"POST Starting the app\"",
+    "start:debug": "node --inspect-brk index.js",
+    "start:dev": "nodemon server.js"
   },
   "keywords": [
     "math",
@@ -15,5 +17,8 @@
     "stuff"
   ],
   "author": "Basti Springer<sebastian.springer@maibornwolff.de>",
-  "license": "ISC"
+  "license": "ISC",
+  "devDependencies": {
+    "nodemon": "^2.0.15"
+  }
 }
