@@ -14,5 +14,9 @@ async function getAllUsers() {
     return users;
 }
 
+async function getOneUser(id) {
+    return users.find(user => user.id === id);
+}
 
-export { getAllUsers };
+
+export { getAllUsers, getOneUser };
