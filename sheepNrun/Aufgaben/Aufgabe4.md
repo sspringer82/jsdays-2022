@@ -4,7 +4,8 @@ Benutze alle Animationsphasen aus `assets/Black_Sheep_Idle.png` um die Idle-Anim
 
 Bildgröße der einzelnen Animationsphasen im Tileset: **325\*464**
 
-**Hinweis 1:** Zum Zeichnen wird `requestAnimationFrame()` benötigt. Der Callback erhält den Timestamp der Zeit seit Start.
+**Hinweis 1:** Zum Zeichnen wird `requestAnimationFrame((timestamp) => {...})` benötigt. Der Callback hat einen Parameter `timestamp` der die Zeit seit Start des Loops.
+
 
 **Hinweis 2:** Ein guter Wert ist ein Animationphasenwechsel alle ~200ms
 
