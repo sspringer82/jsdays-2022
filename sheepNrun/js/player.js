@@ -26,6 +26,11 @@ class Player {
         this.updateEvery = 200;
 
         this.currentAnimationStep = 0;
+        this.isDead = false;
+    }
+
+    die() {
+        this.isDead = true;
     }
 
     init() {
