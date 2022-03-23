@@ -12,5 +12,10 @@ class Gap {
     return Promise.resolve();
   }
 
-  render() {}
+  updatePosition(x, y) {
+    this.x = x;
+    this.y = y;
+  }
+
+  render() { }
 }
