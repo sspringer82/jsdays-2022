@@ -21,6 +21,10 @@ app.use((request, response, next) => {
     next();
 });
 
+app.get('/xyz', (req, res, next) => next(), (req, res, next) => next());
+
+
+
 // Routing - HTTP Method + URL Path
 app.get('/', (request, response) => {
     console.log('Get / Route');
