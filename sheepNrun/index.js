@@ -5,7 +5,27 @@ document.addEventListener('DOMContentLoaded', () => {
   const background = new Background(context);
   const promise = background.init('assets/background1.png');
 
-  Promise.all([promise]).then(() => {
+  const platforms = [
+    new Platform(context),
+    new Platform(context),
+    new Gap(context),
+    new Platform(context),
+    new Platform(context),
+    new Platform(context),
+    new Gap(context),
+    new Platform(context),
+    new Gap(context),
+  ];
+
+  const platformPromises = platforms
+    .map((platform, index) => {
+      platform.x = index * platform.width;
+      platform.y = 282;
+      return platform;
+    }).map((platform) => platform.init());
+
+  Promise.all([promise, ...platformPromises]).then(() => {
     background.render(canvas.clientWidth, canvas.height);
+    platforms.forEach((platform) => platform.render());
   });
 });
