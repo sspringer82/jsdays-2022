@@ -12,7 +12,7 @@ Benutze das Tileset aus `assets/Black_Sheep_Jump.png`. Die einzelnen Bilder sind
 
 **Hinweis:** Ein guter Wert ist ein Animationphasenwechsel alle 100ms
 
-**Hinweis:** Während des Sprungs musst du den Player um 55px nach oben ziehen
+**Hinweis:** Während des Sprungs musst du den Player einmalig für die gesamte Animationsdauer um 55px nach oben ziehen
 
 ## Ergebnis
 
