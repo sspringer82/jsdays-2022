@@ -13,6 +13,11 @@ document.addEventListener('DOMContentLoaded', () => {
 
   Promise.all([promise, platformPromise, playerPromise]).then(() => {
     const loop = new Loop(context, player, background, platformCollection);
+    document.addEventListener('keydown', (e) => {
+      if (e.code === 'Enter') {
+        loop.toggleMoving();
+      }
+    });
     player.y = 202;
     requestAnimationFrame(loop.step.bind(loop));
   });
