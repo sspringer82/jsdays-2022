@@ -8,7 +8,7 @@ class Loop {
     }
 
     update(timestamp) {
-
+        this.player.update(timestamp);
     }
 
     render() {
