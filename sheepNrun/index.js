@@ -24,8 +24,12 @@ document.addEventListener('DOMContentLoaded', () => {
       return platform;
     }).map((platform) => platform.init());
 
-  Promise.all([promise, ...platformPromises]).then(() => {
-    background.render(canvas.clientWidth, canvas.height);
-    platforms.forEach((platform) => platform.render());
+  const player = new Player(context);
+  const playerPromise = player.init();
+
+  Promise.all([promise, ...platformPromises, playerPromise]).then(() => {
+    const loop = new Loop(context, player, background, platforms);
+    player.y = 202;
+    requestAnimationFrame(loop.step.bind(loop));
   });
 });
