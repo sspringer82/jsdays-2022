@@ -9,6 +9,15 @@ class Loop {
     }
 
     toggleMoving() {
+        if (
+            (this.isMoving && this.player.currentState === Player.jump) ||
+            this.player.isDead
+        ) {
+            return;
+        }
+
+        this.background.playMusic();
+
         this.isMoving = !this.isMoving;
         this.player.setIsMoving(this.isMoving);
     }
@@ -19,6 +28,7 @@ class Loop {
             this.platformCollection.update(timestamp);
         }
         if (!this.player.isDead && this.isPlayerDead()) {
+            this.background.audio.pause();
             this.toggleMoving();
             this.player.die();
         }
