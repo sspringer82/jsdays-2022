@@ -2,12 +2,12 @@ document.addEventListener('DOMContentLoaded', () => {
   const button = document.createElement('button');
   button.innerText = 'toggle fullscreen';
 
-  button.onclick = vibrate;
+  button.onclick = goFullscreen;
 
   document.body.appendChild(button);
 });
 
-function vibrate() {
+function goFullscreen() {
   if (!document.fullscreenElement) {
     document.documentElement.requestFullscreen();
   } else {
