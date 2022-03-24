@@ -36,7 +36,8 @@ class List extends HTMLElement {
         tableContainer.innerHTML = '';
 
         const table = document.createElement('table');
-        model.getAllElements().forEach((rowData) => this.createRow(rowData, table));
+        const allElements = model.getAllElements();
+        allElements.forEach((rowData) => this.createRow(rowData, table));
         tableContainer.appendChild(table);
 
         table.addEventListener('click', (e) => {

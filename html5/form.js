@@ -54,8 +54,8 @@ class Form extends HTMLElement {
         }
     }
 
-    save(entry) {
-        model.save(entry);
+    async save(entry) {
+        await model.save(entry);
         const event = new CustomEvent('save');
         this.dispatchEvent(event);
         this.shadowRoot.getElementById('form').reset();
