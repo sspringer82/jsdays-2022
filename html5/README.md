@@ -18,3 +18,4 @@
 - WebXR Example: https://www.xrdinosaurs.com/
 - Testing mit cypress: https://go.cypress.io/
 - Unittesten mit Jest: https://jestjs.io/
+- Web Components: https://developer.mozilla.org/en-US/docs/Web/Web_Components
