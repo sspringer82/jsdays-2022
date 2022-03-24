@@ -7,9 +7,9 @@ class MyComponent extends HTMLElement {
 
   async initAsync() {
     const response = await fetch('template.html');
-    const data = await response.text();
-    const template = document.createElement('template');
-    template.innerHTML = data;
+    const data = await response.text(); // <header>Hello World</header>
+    const template = document.createElement('template'); // <template>
+    template.innerHTML = data; // <template><header>Hello World</header></template>
     const templateContent = template.content;
     const shadowRoot = this.attachShadow({ mode: 'open' });
 
@@ -26,5 +26,5 @@ class MyComponent extends HTMLElement {
 }
 
 document.addEventListener('DOMContentLoaded', () => {
-  customElements.define('my-component', MyComponent);
+  customElements.define('my-component', MyComponent); // <my-component></my-component>
 });

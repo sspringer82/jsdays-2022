@@ -1,3 +1,7 @@
+import './list.js';
+import './model.js';
+import model from './model.js';
+
 let data = [
   {
     id: 1,
@@ -15,67 +19,25 @@ let data = [
   },
 ];
 
+setTimeout(() => {
+  const list = document.querySelector('pw-list');
+  model.addElement({
+    username: 'NEUER EINTRAG',
+    password: 'p@55w0rD',
+    url: 'https://google.com',
+    notes: "Don't give your password away",
+  })
+  list.setAttribute('blubb', Math.random());
+}, 10 * 1000);
+
 document.addEventListener('DOMContentLoaded', () => {
-  buildTable();
+  // buildTable();
 
   document.getElementById('new').addEventListener('click', createEntry);
   document.getElementById('form').addEventListener('submit', save);
   document.getElementById('cancel').addEventListener('click', cancel);
 });
 
-function buildTable() {
-  const tableContainer = document.getElementById('list');
-  tableContainer.innerHTML = '';
-
-  const table = document.createElement('table');
-  data.forEach((rowData) => createRow(rowData, table));
-  tableContainer.appendChild(table);
-
-  table.addEventListener('click', (e) => {
-    if (e.target.classList.contains('delete')) {
-      deleteEntry(e.target.dataset.id);
-    } else if (e.target.classList.contains('edit')) {
-      editEntry(
-        data.find((entry) => entry.id === parseInt(e.target.dataset.id, 10)),
-      );
-    }
-  });
-}
-
-function createRow(data, table) {
-  const tr = document.createElement('tr');
-
-  // url
-  const urlTd = document.createElement('td');
-  urlTd.innerText = data.url;
-  tr.appendChild(urlTd);
-
-  // username
-  const usernameTd = document.createElement('td');
-  usernameTd.innerText = data.username;
-  tr.appendChild(usernameTd);
-
-  // password
-  const passwordTd = document.createElement('td');
-  passwordTd.innerText = '*'.repeat(data.password.length);
-  tr.appendChild(passwordTd);
-
-  // delete button
-  const deleteButton = document.createElement('button');
-  deleteButton.classList.add('delete');
-  deleteButton.dataset.id = data.id;
-  deleteButton.innerText = 'delete';
-  tr.appendChild(deleteButton);
-
-  // edit button
-  const editButton = document.createElement('button');
-  editButton.classList.add('edit');
-  editButton.dataset.id = data.id;
-  editButton.innerText = 'edit';
-  tr.appendChild(editButton);
-
-  table.appendChild(tr);
-}
 
 function deleteEntry(id) {
   const tableContainer = document.getElementById('list');
