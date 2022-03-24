@@ -15,3 +15,4 @@ Die Browser Controls "forward" + "back" sollen unterstützt werden.
 
 - `history.pushState(data, unused, url);`
 - `window.onpopstate = (e) => {...}`
+- `history.replaceState(data, unused, url)`
